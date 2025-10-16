@@ -34,10 +34,10 @@ export const authOptions = {
             tokenExpiry: account.expires_at!,
           });
         }
-        return true; // Allow sign in
+        return true;
       } catch (error) {
         console.error("Error during sign in:", error);
-        return false; // Block sign in if there's an error
+        return false; 
       }
     },
 
@@ -59,13 +59,10 @@ export const authOptions = {
       };
     },
 
-    // Add redirect callback
     async redirect({ url, baseUrl }) {
-      // Redirect to dashboard after successful sign in
       if (url.startsWith(baseUrl)) {
         return `${baseUrl}/dashboard`;
       }
-      // Allows relative callback URLs
       else if (url.startsWith("/")) {
         return `${baseUrl}${url}`;
       }
@@ -73,8 +70,8 @@ export const authOptions = {
     },
   },
   pages: {
-    signIn: "/auth/signin", // Optional: Custom sign in page
-    error: "/auth/error", // Optional: Error page
+    signIn: "/auth/signin",
+    error: "/auth/error",
   },
 };
 

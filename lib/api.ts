@@ -25,6 +25,9 @@ export const api = {
 
   getProfile: () => fetchApi('/api/user/getProfile'),
   getCalendarEvents: () => fetchApi('/api/calendar/getEvents'),
+  deletePhone: () => fetchApi('/api/user/delete-phone', {
+    method: 'DELETE'
+  }),
 
 };
 

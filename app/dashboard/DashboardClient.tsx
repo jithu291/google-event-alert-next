@@ -109,6 +109,15 @@ export default function DashboardClient() {
         }
     };
 
+    const handleDelete = async () => {
+        try {
+            await api.deletePhone();
+            fetchUserProfile();
+        } catch (error) {
+            toast("Phone number updating failed!");
+        } 
+    };
+
     const handleSignOut = async () => {
         await signOut({ callbackUrl: '/' });
     };
@@ -277,8 +286,7 @@ export default function DashboardClient() {
                                         <Button
                                             type="button"
                                             variant="outline"
-                                            onClick={() => form.reset({ phoneNumber: user.phoneNumber })}
-                                            disabled={isLoading}
+                                            onClick={() => handleDelete()}
                                         >
                                             Reset
                                         </Button>
