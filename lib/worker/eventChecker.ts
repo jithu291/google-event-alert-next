@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import { Worker } from "bullmq";
 import { getAllUsers } from "@/lib/user";
 import { fetchGoogleCalendarEvents } from "@/lib/googleCalendar";

@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import { getUserByEmail, updateUserTokens } from "@/lib/user";
 
 interface TokenData {
-    email?: string;
+    email?: string |null| undefined;
     accessToken?: string;
     refreshToken?: string;
     tokenExpiry?: number;

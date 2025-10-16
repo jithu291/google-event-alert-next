@@ -94,7 +94,7 @@ export async function getUserByEmail(email: string) {
 }
 
 export async function updateUserTokens(
-  email: string,
+  email: string | null | undefined,
   updateData: { googleAccessToken?: string; tokenExpiry?: number }
 ) {
   try {
