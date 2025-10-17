@@ -30,3 +30,22 @@ Check port 6379 is running
 Terminal 1 - npm run dev
 Terminal 2 - npm run start:workers
 
+### HOW IT WORKS
+User logs in with Google 
+    
+Grants calendar access (OAuth)
+    
+Enters phone number in dashboard
+    
+Scheduler runs every 1 minute
+    
+Worker checks all users' calendars
+    
+Finds events starting in next 5 minutes
+    
+Adds reminder job to queue
+    
+Twilio calls user's phone
+    
+Notification logged (prevents duplicates)
+
